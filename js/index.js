@@ -36,17 +36,16 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
-
+const sections = ['Services', 'Product', 'Vision', 'Features', 'About', 'Contact']
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let links = document.querySelectorAll('nav a')
-console.log(links)
 let linkFunc = function(){
-  const linkNames = ['Services', 'Product', 'Vision', 'Features', 'About', 'Contact']
+  
   for (let i = 0; i < links.length; i++){
-    links[i].textContent = linkNames[i]
+    links[i].textContent =sections[i]
   }
 }
 linkFunc()
@@ -58,4 +57,38 @@ document.querySelector('button').textContent = 'Get Started'
 let headImg = document.getElementById('cta-img')
 headImg.setAttribute('src',siteContent['cta']['img-src'] )
 
-// MID PAGE
+// MAIN CONTENT
+let contHeadings = document.querySelectorAll('h4')
+let sectionHeadings = function(){
+  for (let i = 0; i < contHeadings.length; i++){
+    contHeadings[i].textContent = sections[i]
+  }
+}
+
+sectionHeadings()
+
+let sectP = document.querySelectorAll('.main-content p')
+let contP = function(){
+  for (let i = 0; i < sectP.length; i++){
+    sectP[i].textContent = `${sections[i]} content Nulla facilisis mi quis ligula euismod, porta dictum mauris faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam sollicitudin vitae odio eget porta. Suspendisse pulvinar ipsum eu tortor pharetra, at sagittis arcu lobortis.`
+  }
+}
+contP()
+let mainImg = document.getElementById('middle-img')
+mainImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
+
+
+//CONTACT
+
+let contact = document.querySelectorAll('.contact p')
+let contInfo = function (){
+  const arr = Object.values(siteContent['contact'])
+  for (let i = 0; i < contact.length; i++){
+    contact[i].textContent = arr[i+1]
+  }
+}
+contInfo()
+
+// Footer!
+
+document.querySelector('footer p').textContent = siteContent.footer.copyright
