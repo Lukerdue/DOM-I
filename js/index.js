@@ -40,3 +40,22 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let links = document.querySelectorAll('nav a')
+console.log(links)
+let linkFunc = function(){
+  const linkNames = ['Services', 'Product', 'Vision', 'Features', 'About', 'Contact']
+  for (let i = 0; i < links.length; i++){
+    links[i].textContent = linkNames[i]
+  }
+}
+linkFunc()
+
+const title = document.querySelector('h1')
+title.textContent = 'Dom is Awesome'
+document.querySelector('button').textContent = 'Get Started'
+
+let headImg = document.getElementById('cta-img')
+headImg.setAttribute('src',siteContent['cta']['img-src'] )
+
+// MID PAGE
