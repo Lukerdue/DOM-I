@@ -40,15 +40,31 @@ const sections = ['Services', 'Product', 'Vision', 'Features', 'About', 'Contact
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+let nav = document.querySelector('nav')
+let links = document.querySelectorAll('nav a'
 
-let links = document.querySelectorAll('nav a')
+)
+let newLinkOne = document.createElement('a')
+newLinkOne.href = '#Blog';
+newLinkOne.textContent = 'Blog';
+newLinkOne.style.color = "green";
+
+let newLinkTwo = document.createElement('a')
+newLinkTwo.href = '#home';
+newLinkTwo.textContent = 'Home';
+newLinkTwo.style.color = "green";
+
+nav.appendChild(newLinkOne)
+nav.prepend(newLinkTwo)
 let linkFunc = function(){
   
   for (let i = 0; i < links.length; i++){
-    links[i].textContent =sections[i]
+    links[i].textContent = sections[i]
+    links[i].style.color = 'green'
   }
 }
 linkFunc()
+
 
 const title = document.querySelector('h1')
 title.textContent = 'Dom is Awesome'
