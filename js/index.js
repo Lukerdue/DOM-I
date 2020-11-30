@@ -88,3 +88,26 @@ for(i=0;i<contacts.length;i++){
 
 //footer section
 document.querySelector('footer p').textContent = siteContent['footer']['copyright']
+
+//nav color change
+for(i=0;i<navAList.length;i++){
+  navAList[i].style.color = "green";
+}
+
+//add nav items
+let nav = document.querySelector('nav');
+
+let home = document.createElement('a');
+let blog = document.createElement('a');
+
+home.href = '#';
+blog.href = "#";
+
+home.textContent = 'Home';
+blog.textContent = 'Blog';
+
+home.style.color = "green";
+blog.style.color = "green";
+
+nav.appendChild(home);
+nav.appendChild(blog);
