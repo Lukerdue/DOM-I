@@ -17,7 +17,15 @@ document.querySelector('body').appendChild(reset);
 
 
 function count (){
-    if(parseInt(msTens.textContent)<9){
+    if(parseInt(tens.textContent)===1){
+        console.log('finished')
+        window.clearInterval(interval)
+        let numbers = document.querySelectorAll('.digit')
+        for(i=0;i<numbers.length;i++){
+            numbers[i].style.color = "red";
+        }
+    }
+    else if(parseInt(msTens.textContent)<9){
         msTens.textContent = parseInt(msTens.textContent)+1
     }
     else if(parseInt(msTens.textContent)===9 && parseInt(msHuns.textContent)<9){
@@ -34,11 +42,6 @@ function count (){
         msHuns.textContent=0;
         ones.textContent=0;
         tens.textContent = 1;
-        window.clearInterval(interval);
-    }
-    else{
-        console.log('finished')
-        window.clearInterval(interval)
     }
 }
 let interval = window.setInterval(count, 10)
