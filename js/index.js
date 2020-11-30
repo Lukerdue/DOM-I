@@ -40,10 +40,20 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//nav
+//get nav a tags in array
 const navAList = document.querySelectorAll('nav a');
 let navATexts = Object.keys(siteContent['nav'])//make object keys into array
-for(i=0; i < navATexts.length; i++){
+
+//loop over array to add the text-content
+for(i=0; i < navATexts.length-1; i++){
   let key = navATexts[i]
+  console.log(key)
   navAList[i].textContent= siteContent['nav'][key];
 }
 
+//cta
+document.querySelector('h1').textContent = siteContent['cta']['h1'];
+document.querySelector('button').textContent = siteContent['cta']['button'];
+document.querySelector('#cta-img').src = siteContent['cta']['img-src']
