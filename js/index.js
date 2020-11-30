@@ -74,3 +74,17 @@ for(i=0;i<headers.length; i++){
 
 //img main content
 document.querySelector('#middle-img').src = siteContent['main-content']['middle-img-src'];
+
+
+//contact section
+document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4'];
+let contacts = document.querySelectorAll('.contact p')
+let contactTexts = Object.keys(siteContent['contact'])
+for(i=0;i<contacts.length;i++){
+ let contactText = contactTexts[i+1];
+ contacts[i].textContent = siteContent['contact'][contactText];
+}
+
+
+//footer section
+document.querySelector('footer p').textContent = siteContent['footer']['copyright']
